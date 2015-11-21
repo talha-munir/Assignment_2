@@ -1,0 +1,290 @@
+.col-1{ width: 8.33%;}
+.col-2{ width: 16.66%;}
+.col-3{ width: 25%;}
+.col-4{ width: 33.33%;}
+.col-5{ width: 41.66%;}
+.col-6{ width: 50%;}
+.col-7{ width: 58.33%;}
+.col-8{ width: 66.66%;}
+.col-9{ width: 75%;}
+.col-10{ width: 83.33%;}
+.col-11{ width: 91.66%;}
+.col-12{ width: 100%;}
+
+[class*="col-"]{
+ float: left; 
+}
+.row {
+    margin-right: 0px!important;
+    margin-left: 0px!important;
+}
+.row:after{
+ content: "";
+ clear: both;
+ display: block;
+
+}
+.a{
+font-family: Comic Sans MS;
+font-style: Italic;
+}
+#full-size {width:100%; padding:0px;}
+
+.header{
+	height: 20%;
+	background-color: #4FC1E9;
+}
+.footer{
+	height:5%;
+	background-color: #272A33;
+	color: #FFFFFF;
+	}
+
+.mainBar{
+	height: 75%;
+	background: none;
+	
+}
+.widget {
+  border: none;
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,0.4);
+  text-align: center;
+  border-radius: 3px;
+  height:100%;
+}
+.week {
+	font-weight: 500;
+}
+#calendar{
+	
+	color: #fff!important;
+	text-align:center;
+	border: 0px solid #ccc;
+  
+}
+.day {
+    color:#2875C7;
+    font-weight:bold;
+    display: table-cell;
+}
+#calendar>div.week {
+    float:left;
+    border-top:solid 1px #ccc;
+} 
+.today {
+ background: #000;
+ border-radius: 0%;
+}
+.disabled {
+    color: rgba(0,0,0,.4) !important;
+}
+
+
+.weather .glyphicon {
+  color: #3498db;
+}
+
+#weather-text {
+	margin-top:3%;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #3498db;
+}
+#weather-high-low{
+	margin-top:2%;
+	font-size:309%;
+	color:#ffffff;
+}
+#weather-full{
+	margin-top:1%;
+	margin-left:20%;
+	font-size:200%;
+	color:#ffffff
+}
+#head{
+	text-align:center;
+	float: left;
+	width:100%;
+	font-size:350%;
+	height: 70%;
+	font-family: century gothic;
+	font-weight: 500;
+	color: #fff;
+}
+#name{
+	text-align: center;
+	float: left;
+	width: 100%;
+	font-size:150%;
+	height: 20%;
+}
+#calDash{
+	margin: 2.5%;
+	margin-top:10%;
+	background-color:#3BAFDA;
+	height:70%;
+	border-radius:10%;
+}
+#calName{
+	font-size: 40px;
+	float:left;
+	width: 100%;
+	color: #fff;
+}
+#clockDash{
+margin: 2.5%;
+margin-top:10%; 
+background-color:#F6BB42;
+height:70%;
+	border-radius:10%;
+
+}
+#weatherDash{
+	margin: 2.5%;
+	margin-top:10%;
+	background-color:#DA4453;
+	height:70%;
+		border-radius:15%;
+
+	
+}
+#clockDetail{
+	margin: 2.5%;
+	margin-top:0%;
+	background-color:#F6BB42;
+	height:10%;
+	text-align:center;
+	padding-top:1%;
+	font-size:180%;
+	font-weight:bold;
+	color:#ffffff;
+}
+#mainClock{
+	margin: 2.5%;
+	margin-top:5%; 
+	background-color:#F6BB42;
+	height:70%;
+}
+#weatherDash{
+	margin: 2.5%;
+	margin-top:0%; 
+	background-color:#DA4453;
+	height:10%;
+	text-align:center;
+	padding-top:1%;
+	font-size:180%;
+	font-weight:bold;
+	color:#ffffff;
+}
+#buttonRow{
+	height:14.5%;
+	width:100%;
+	margin-left:0%;
+	padding-bottom:5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#clock {
+  border-radius: 50%;
+  background: #fff url(ios_clock.svg) no-repeat center;
+  background-size: 88%;
+  background-color:#F6BB42;
+  border:8px solid white;
+
+  height: 25em;
+  padding: 11%;
+  position: relative;
+  margin-left:35%;
+  width: 25em;
+}
+
+.clock.simple:after {
+ border:8px;
+  border-color:#ffffff;
+ background: #fff;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
+  height: 5%;
+  z-index: 10;
+}
+
+.minutes-container, .hours-container, .seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hours {
+  background: #000;
+  height: 20%;
+  left: 48.75%;
+  position: absolute;
+  top: 30%;
+  transform-origin: 50% 100%;
+  width: 2.5%;
+ 
+}
+
+.minutes {
+  background: #000;
+  height: 40%;
+  left: 49%;
+  position: absolute;
+  top: 10%;
+  transform-origin: 50% 100%;
+  width: 2%;
+
+}
+
+.seconds {
+  background: #000;
+  height: 45%;
+  left: 49.5%;
+  position: absolute;
+  top: 14%;
+  transform-origin: 50% 80%;
+  width: 1%;
+  z-index: 8;
+  
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.hours-container {
+  animation: rotate 43200s infinite linear;
+}
+.minutes-container {
+  animation: rotate 3600s infinite linear;
+}
+.seconds-container {
+  animation: rotate 60s infinite linear;
+}
+
+.minutes-container {
+  animation: rotate 3600s infinite steps(60);
+}
+.seconds-container {
+  animation: rotate 60s infinite steps(60);
+}

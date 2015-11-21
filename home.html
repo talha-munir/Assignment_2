@@ -1,0 +1,160 @@
+<html>
+<head>
+<title>Assignment 2</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<script src="javascript.js"></script>
+</head>
+
+<body style="font-family: century gothic;" ng-app="myApp" onload="myfunc()">
+<div style="width:100%;height:100%" id="full">
+	<div class="container"  id="full-size" >
+	<!-- Header Dashboard -->	
+		<div class="row header col-12">
+			<div id="head">Welcome To DashBoard</div>
+			<div id="name">Muhammad Talha Munir</div>
+		</div>
+	<!-- Main Dashboard -->	
+		
+		
+		
+		<div style="position:relative;" class="row mainBar col-12">
+			
+			<!-- Main Dashboard : Calender -->
+			<div class="col-md-4 calendar	 widget" >
+			<div class="row" id="calDash" ng-controller="myController" onclick="showCalender()"  id="calendar">
+			<div style="margin-top: 12%;width:100%;text-align:center;"><img src="calendar.png" style="width: 200px;"></div><span id="CalName">Calendar</span>
+				
+			
+			</div>
+			</div>
+			<!-- Main Dashboard : Clock -->
+			
+			<div class="col-md-4 clock widget" >
+			<div class="row" id="clockDash" onclick="showClock()">
+				<div style="margin-top: 12%;width:100%;text-align:center;"><img src="clock.png" style="width: 200px;"></div><span id="calName">Clock</span>
+				
+			</div>
+			</div>
+			
+			<!-- Main Dashboard : Weather -->
+			
+			<div class="col-md-4 weather widget" >
+			<div class="row" style="margin: 2.5%;margin-top:10%; background-color:#DA4453;height:70%;border-radius:10%;" onclick="showweather()">
+				<div style="margin-top: 12%;width:100%;text-align:center;"><img src="weather.png" style="width: 200px;"></div><span style="font-size: 40px;float:left;width: 100%;color: #fff;">Weather</span>
+			
+			</div>
+			
+			</div>
+			
+		
+		</div>
+		
+		
+		
+		
+	<!-- Footer Dashboard -->	
+	
+		<div class="row footer col-12">
+			Designed and Developed by Talha Munir
+
+		</div>
+		
+	</div>
+	
+		<!-- Detailed View  -->	
+
+	<div class="container"  id="detail-size" >
+		<!-- Detailed : Clock View -->
+		<div id="clockView" style="display:none;">
+			<div class="row" style="margin: 2.5%;margin-top:3%; background-color:#F6BB42;height:75%;	border-radius:2%;
+">
+				<div style="">
+					<p class="time-text" style="font-weight: bold;text-align: center;font-size:230%">0:00 --</p>
+					<p class="date-day" style="font-weight: bold;text-align: center;font-size:230%">-----, --- --</p>
+				</div>
+				<article id="clock">
+				  <div class="hours-container">
+					<div class="hours"></div>
+				  </div>
+				  <div class="minutes-container">
+					<div class="minutes"></div>
+				  </div>
+				  <div class="seconds-container">
+					<div class="seconds"></div>
+				  </div>
+				</article>
+
+			</div>
+			<div class="row" style="margin: 2.5%;margin-top:0%; background-color:#F6BB42;height:10%;text-align:center;padding-top:1%;font-size:180%;font-weight:bold;color:#ffffff;	border-radius:2%;
+" onclick="closeClock()">
+				DashBoard
+			</div>
+		</div>
+		<!-- Detailed : Weather View -->
+		<div id="weatherView" style="display:none;">
+			<div class="row" style="margin: 2.5%;margin-top:5%; background-color:#DA4453;height:70%;">
+			<div class="widget weather" id="weather-big">
+				<div id="weather-text">Current Weather...</div>
+				<div id="weather-high-low">---------</div>
+				<div id="weather-text">Weather Forecast</div>
+				<div id="weather-full"></div>
+				</div>
+			
+			</div>
+			<div class="row" style="margin: 2.5%;margin-top:0%; background-color:#DA4453;height:10%;text-align:center;padding-top:1%;font-size:180%;font-weight:bold;color:#ffffff" onclick="closeWeather()">
+				DashBoard
+			</div>
+				
+		</div>
+		
+		<!-- Detailed : Calender View -->
+		<div id="calenderView" style="display:none;" >
+			<div class="row" style="margin: 2.5%;margin-top:5%; background-color:#3BAFDA;height:70%;">
+			
+				<div class="row" style="margin: 2.5%; margin-top: 3%; height: 80%;" ng-controller="myController"  id="calendar"  >
+					<!-- Main Dashboard : Calender : Main Calender Plugin : Month Name -->
+					<div><img src="calendar.png" style="MARGIN-RIGHT: 20px; vertical-align: top; width: 50px;"><span style="font-size: 40px;">Calendar</span></div>
+					<div class="row" style="height:14.5%;;width:100%;margin-left:0%;padding-bottom:5%">
+							<a href="#" ng-click = "previous()" style="float:left;"><img src="left.png" style="width: 35%;"></a>
+                        <a href="#" ng-click = "next()" style="float:right;"><img src="right.png" style="width:35%;"></a>
+                    
+							<h2 style="margin-top:10px;" ng-bind="currMonth" class="monthName"></h2>
+						    
+					</div>
+					<!-- Main Dashboard : Calender : Main Calender Plugin : Week days names -->
+			
+					<div class="row" style="height:10.5%;width:100%;margin-left:0%;">
+						<div class="week names col-1" style="width:14%;font-size:124%;padding-left: 3%;" ng-repeat="day in days">
+							<span class="day" style="text-bottom:0%;margin-bottom:0%; font-weight: 500; color:#fff;" >{{day | uppercase}}</span>
+						</div> 
+					</div>
+					<!-- Main Dashboard : Calender : Main Calender Plugin : Dates -->
+			
+					<div class="row" style="height:75%;width:100%;margin-left:0%;">
+						<div class="week"  ng-repeat="week in weeks">
+							<div ng-repeat="day in week" style="float:left;width:14%;height:16%;padding-left: 5%;color:#000;">
+								<span class="day" ng-class="day.class" style="color:#fff;" ng-bind="day.data"></span>
+							</div>  
+						</div>
+					</div>
+				</div>
+			
+			</div>
+			
+			<div class="row" style="margin: 2.5%;margin-top:0%; background-color:#3BAFDA;height:10%;text-align:center;padding-top:1%;font-size:180%;font-weight:bold;color:#ffffff" onclick="closeCalender()">
+				DashBoard
+			</div>
+			
+		</div>
+	</div>
+	</div>
+
+
+</body>
+</html>
